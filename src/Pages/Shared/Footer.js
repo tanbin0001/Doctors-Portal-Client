@@ -32,6 +32,7 @@ const Footer = () => {
             </div>
             <div className='my-10 '>
                 <p className='text-center'>Copyright © 2022 - All right reserved</p>
+                <p className='text-center font-bold' > Ashrafuj Jaman Tanbin</p>
             </div>
         </footer>
     );

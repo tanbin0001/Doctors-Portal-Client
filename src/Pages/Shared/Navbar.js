@@ -11,6 +11,7 @@ const Navbar = () => {
 
   const logout = () => {
     signOut(auth);
+    localStorage.removeItem('accessToken');
   };
   const menuItems = <>
     <li><Link to="/">Home</Link></li>
@@ -18,6 +19,9 @@ const Navbar = () => {
     <li><Link to="/review">Review</Link></li>
     <li><Link to="/contact">Contact</Link></li>
     <li><Link to="/about">About</Link></li>
+    {
+      user &&  <li><Link to="/dashboard">Dashboard</Link></li>
+    }
     <li>{user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <Link to="/login">Login</Link>}</li>
   </>
   return (
@@ -39,7 +43,11 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
+        <div className="navbar-end">
+      <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
       </div>
+      </div>     
+      
     </div>
   );
 };
